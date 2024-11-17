@@ -20,9 +20,9 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
       ),
-      body: Container(
-        padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-        child: const Column(
+      body: const Padding(
+        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
@@ -36,6 +36,7 @@ class Home extends StatelessWidget {
                   )
                 ],
               ),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
