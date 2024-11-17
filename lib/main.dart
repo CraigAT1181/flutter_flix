@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(const MaterialApp(home: Home()));
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,38 +12,78 @@ class Home extends StatelessWidget {
         title: const Text(
           'Flutter Flix!',
           style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Raleway-Bold',
-              fontSize: 32),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Raleway-Bold',
+            fontSize: 32,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
       ),
-      body: const Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30, 40, 30, 40),
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Center(
+                child: Column(
+              children: [
+                Text(
+                  'Flick Finder',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text('Search Bar goes here!'),
+                Text('Result panel appears here!')
+              ],
+            )),
+            Center(
+              child: Column(
                 children: [
-                  Text(
-                    'Flick Finder',
+                  const Text(
+                    'Flick Picker',
                     style: TextStyle(
                       fontSize: 24,
                     ),
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.arrow_left),
+                        onPressed: () {},
+                      ),
+                      const Text('Stack goes here!'),
+                      IconButton(
+                        icon: const Icon(Icons.arrow_right),
+                        onPressed: () {},
+                      )
+                    ],
                   )
                 ],
               ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            const Center(
+              child: Column(
                 children: [
-                  Text('Search Bar goes here!')
+                  Text(
+                    'New this year...',
+                    style: TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text('Carousel goes here!')
                 ],
-              )
-            ]),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
